@@ -1,0 +1,27 @@
+
+plugins{
+    id 'java'
+}
+
+group 'JavaChat_AMS'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation project (':Model')
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.3'
+
+    implementation "org.springframework:spring-context:$springVersion"
+    implementation "org.springframework:spring-jms:$springVersion"
+    implementation "org.apache.activemq:activemq-spring:$activeMQVersion"
+
+    implementation "org.springframework:spring-context:$springVersion"
+
+    implementation "org.apache.activemq:activemq-spring:$activeMQVersion"
+
+    testImplementation "junit:junit-dep:$junitVersion"
+}
