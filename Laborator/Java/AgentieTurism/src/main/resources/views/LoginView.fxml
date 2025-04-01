@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="300.0" prefWidth="300.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ro.mpp2024.controller.LoginController">
+    <center>
+        <VBox alignment="CENTER" prefHeight="315.0" prefWidth="400.0" spacing="15">
+
+            <Label style="-fx-font-size: 22px; -fx-font-weight: bold;" text="Login">
+            <padding>
+               <Insets bottom="20.0" />
+            </padding></Label>
+
+            <GridPane alignment="CENTER" hgap="10" prefHeight="90.0" prefWidth="324.0" vgap="10">
+                <columnConstraints>
+                    <ColumnConstraints halignment="RIGHT" />
+                    <ColumnConstraints prefWidth="50.0" />
+               <ColumnConstraints prefWidth="200.0" />
+                </columnConstraints>
+
+                <Label text="Email:" GridPane.columnIndex="1">
+               <padding>
+                  <Insets right="4.0" />
+               </padding></Label>
+                <TextField fx:id="emailField" maxWidth="200" promptText="Introduceți email-ul" GridPane.columnIndex="2">
+               <GridPane.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </GridPane.margin></TextField>
+
+                <Label text="Parolă:" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <PasswordField fx:id="passwordField" maxWidth="200" promptText="Introduceți parola" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+
+                <Label fx:id="errorLabel" alignment="CENTER" prefHeight="18.0" prefWidth="250.0" textFill="red" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <rowConstraints>
+               <RowConstraints maxHeight="34.19999904632568" minHeight="10.600000953674318" prefHeight="23.6" />
+               <RowConstraints maxHeight="40.599999046325685" minHeight="15.800000953674314" prefHeight="25.6" />
+               <RowConstraints minHeight="10.0" prefHeight="20.0" />
+            </rowConstraints>
+            <VBox.margin>
+               <Insets right="20.0" />
+            </VBox.margin>
+            </GridPane>
+
+            <Button onAction="#handleLogin" style="-fx-font-size: 14px; -fx-padding: 8px 20px;" text="Autentificare" />
+        </VBox>
+    </center>
+</BorderPane>

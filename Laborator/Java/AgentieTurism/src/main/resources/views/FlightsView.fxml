@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane minHeight="300.0" minWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ro.mpp2024.controller.FlightsController">
+    <VBox alignment="CENTER" spacing="10">
+        <HBox spacing="10" />
+    </VBox>
+   <center>
+      <GridPane alignment="CENTER" BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="20.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+               <Button alignment="CENTER" onAction="#handleSearch" text="Caută" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets left="35.0" />
+               </GridPane.margin>
+            </Button>
+              <Button onAction="#handleLogout" text="Logout" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
+               <DatePicker fx:id="datePicker" promptText="Data" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+              <Button onAction="#handleFlightSelection" text="Detalii Zbor" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </Button>
+              <TableView fx:id="flightsTable" GridPane.columnSpan="3" GridPane.rowIndex="2" GridPane.rowSpan="2">
+                  <columns>
+                      <TableColumn fx:id="destinationColumn" text="Destinație" />
+                      <TableColumn fx:id="dateColumn" maxWidth="6000.0" prefWidth="70.5999755859375" text="Data Plecării" />
+                      <TableColumn fx:id="airportColumn" maxWidth="4000.0" prefWidth="87.0" text="Aeroport" />
+                      <TableColumn fx:id="seatsColumn" prefWidth="109.5999755859375" text="Locuri Disponibile" />
+                  </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+              </TableView>
+               <TextField fx:id="searchField" promptText="Destinație" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+              <Label style="-fx-font-size: 18px;" text="Lista zborurilor" GridPane.columnSpan="4" GridPane.valignment="CENTER" />
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+      </GridPane>
+   </center>
+</BorderPane>
